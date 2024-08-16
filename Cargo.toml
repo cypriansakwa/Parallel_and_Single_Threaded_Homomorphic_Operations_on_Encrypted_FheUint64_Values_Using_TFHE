@@ -1,0 +1,8 @@
+[package]
+name = "Parallel_and_Single_Threaded_Homomorphic_Operations_on_Encrypted_FheUint64_Values_Using_TFHE"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tfhe = { version = "*", features = ["boolean", "shortint", "integer", "x86_64"] }
+rayon = "1.5"
