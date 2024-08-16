@@ -1,5 +1,6 @@
 ## Overview
-This Rust program shows how to perform homomorphic operations (addition, subtraction, multiplication, and division) on encrypted FheUint64 values using the TFHE (Tor Functional Encryption) library. The code supports both parallel and single-threaded execution modes, with Rayon used for parallel computations.
+- This Rust program shows how to perform homomorphic operations (addition, subtraction, multiplication, and division) on encrypted FheUint64 values using the TFHE (Tor Functional Encryption) library. The code supports both parallel and single-threaded execution modes, with Rayon used for parallel computations.
+- The code improves the performance of the TFHE library by using parallel processing for homomorphic operations, which can dramatically reduce computation times for large-scale encrypted data. 
 ## Features
 - **Homomorphic Operations:** Supports addition, subtraction, multiplication, and division on encrypted integers.
 - **Execution Modes:** Choose between parallel and single-threaded execution.
@@ -12,6 +13,8 @@ This Rust program shows how to perform homomorphic operations (addition, subtrac
 ## How It Works
 - **Parallelism Enabled:** Rayon supports parallelism, which allows operations like addition, subtraction, multiplication, and division to be performed concurrently over several threads. This enables the program to do numerous operations concurrently, which can considerably reduce total calculation time.
 - **Execution Mode:** Users can select between parallel and single-threaded execution modes based on their requirements. Parallel mode is activated by calling ExecutionMode::Parallel, which causes Rayon to handle the operations concurrently. In contrast, single-threaded mode (ExecutionMode::SingleThreaded) performs actions sequentially rather than in parallel.
+   - **Parallel Mode:** Parallel Mode is appropriate for instances in which numerous processes must be done simultaneously. This mode is intended to handle large-scale operations efficiently by dividing the effort among numerous threads.
+   - **Single-Threaded Mode:** Ideal for testing or scenarios in which parallel execution is not required. It enables the program to execute in contexts with limited resources or in simpler cases where parallelism may not provide substantial benefits.
 ## Benefits
 - **Improved Performance:** Parallel execution of huge datasets or complex computations can result in significant performance increases. This is accomplished by dividing the task across numerous CPU cores, which reduces processing time.
 - **Efficient Resource Utilization:** Parallel processing makes the best use of available CPU cores, resulting in better resource utilization and faster execution times.
